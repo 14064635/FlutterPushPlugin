@@ -1,0 +1,20 @@
+com.naoxuejia.android.client
+color colorAccent
+color colorPrimary
+color colorPrimaryDark
+id btn_clear_log
+id btn_rich
+id btn_unbindTags
+id logtip_fra
+id stroll_text
+id text_log
+id text_log_tip
+id thirdBtnLine
+layout main
+mipmap ic_launcher
+string app_name
+string clear_log
+string log_tip
+string notify_one
+string notify_two
+style AppTheme

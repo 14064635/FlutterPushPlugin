@@ -1,0 +1,314 @@
+Index: android/src/main/java/com/huaweipush/naoxuejia/flutter_huawei_push/HuaWeiPushService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- android/src/main/java/com/huaweipush/naoxuejia/flutter_huawei_push/HuaWeiPushService.java	(revision d4b61ae214dc6072e30413251114ae84904279c7)
++++ android/src/main/java/com/huaweipush/naoxuejia/flutter_huawei_push/HuaWeiPushService.java	(date 1592892441000)
+@@ -40,6 +40,7 @@
+         intent.setAction(CODELABS_ACTION);
+         intent.putExtra("method", "onNewToken");
+         intent.putExtra("msg",token);
++        intent.putExtra("provider","HUAWEI");
+ 
+         sendBroadcast(intent);
+     }
+Index: android/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- android/src/main/AndroidManifest.xml	(revision d4b61ae214dc6072e30413251114ae84904279c7)
++++ android/src/main/AndroidManifest.xml	(date 1592883911000)
+@@ -30,7 +30,7 @@
+             android:enabled="true" />
+ 
+         <receiver
+-            android:name=".XiaoMiMessageReceiver"
++            android:name="com.huaweipush.naoxuejia.flutter_huawei_push.XiaoMiMessageReceiver"
+             android:exported="true">
+             <intent-filter>
+                 <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision d4b61ae214dc6072e30413251114ae84904279c7)
++++ .idea/workspace.xml	(date 1592892908000)
+@@ -2,15 +2,11 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="f320cd13-8414-4c2a-9a1a-768a6c05299d" name="Default Changelist" comment="">
+-      <change afterPath="$PROJECT_DIR$/android/libs/MiPush_SDK_Client_3_7_6.jar" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/huaweipush/naoxuejia/flutter_huawei_push/XiaoMiMessageReceiver.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/android/src/main/res/values/strings.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/android/src/main/java/com/huaweipush/naoxuejia/flutter_huawei_push/FlutterHuaweiPushPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/huaweipush/naoxuejia/flutter_huawei_push/FlutterHuaweiPushPlugin.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/android/src/main/java/com/huaweipush/naoxuejia/flutter_huawei_push/HuaWeiPushService.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/huaweipush/naoxuejia/flutter_huawei_push/HuaWeiPushService.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/huaweipush/naoxuejia/flutter_huawei_push/RomUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/huaweipush/naoxuejia/flutter_huawei_push/RomUtil.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/huaweipush/naoxuejia/flutter_huawei_push/XiaoMiMessageReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/huaweipush/naoxuejia/flutter_huawei_push/XiaoMiMessageReceiver.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+     </list>
+     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+     <option name="SHOW_DIALOG" value="false" />
+@@ -56,8 +52,8 @@
+       <file pinned="false" current-in-tab="true">
+         <entry file="file://$PROJECT_DIR$/lib/flutter_huawei_push.dart">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="374">
+-              <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
++            <state relative-caret-position="408">
++              <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+               <folding>
+                 <element signature="e#0#20#0" expanded="true" />
+               </folding>
+@@ -355,11 +351,19 @@
+       <option name="project" value="LOCAL" />
+       <updated>1592875873353</updated>
+     </task>
+-    <option name="localTasksCounter" value="26" />
++    <task id="LOCAL-00026" summary="小米SDK接入">
++      <created>1592878723184</created>
++      <option name="number" value="00026" />
++      <option name="presentableId" value="LOCAL-00026" />
++      <option name="project" value="LOCAL" />
++      <updated>1592878723184</updated>
++    </task>
++    <option name="localTasksCounter" value="27" />
+     <servers />
+   </component>
+   <component name="ToolWindowManager">
+     <frame x="0" y="23" width="1932" height="977" extended-state="0" />
++    <editor active="true" />
+     <layout>
+       <window_info id="Captures" order="0" weight="0.25" />
+       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2031746" />
+@@ -404,7 +408,8 @@
+     <MESSAGE value="修改Bug" />
+     <MESSAGE value="华为PUSH SUCCESS提交" />
+     <MESSAGE value="规范代码" />
+-    <option name="LAST_COMMIT_MESSAGE" value="规范代码" />
++    <MESSAGE value="小米SDK接入" />
++    <option name="LAST_COMMIT_MESSAGE" value="小米SDK接入" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+@@ -556,8 +561,8 @@
+     </entry>
+     <entry file="file://$PROJECT_DIR$/lib/flutter_huawei_push.dart">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="374">
+-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
++        <state relative-caret-position="408">
++          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+           <folding>
+             <element signature="e#0#20#0" expanded="true" />
+           </folding>
+Index: android/src/main/java/com/huaweipush/naoxuejia/flutter_huawei_push/XiaoMiMessageReceiver.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- android/src/main/java/com/huaweipush/naoxuejia/flutter_huawei_push/XiaoMiMessageReceiver.java	(revision d4b61ae214dc6072e30413251114ae84904279c7)
++++ android/src/main/java/com/huaweipush/naoxuejia/flutter_huawei_push/XiaoMiMessageReceiver.java	(date 1592892942000)
+@@ -2,6 +2,7 @@
+ 
+ import android.annotation.SuppressLint;
+ import android.content.Context;
++import android.content.Intent;
+ import android.os.Build;
+ import android.os.Message;
+ import android.text.TextUtils;
+@@ -26,6 +27,7 @@
+     private String mStartTime;
+     private String mEndTime;
+     private String TAG = "com.naoxuejia.clinent.android";
++    private final static String CODELABS_ACTION = "com.naoxuejia.android.client.action";
+     @Override
+     public void onReceivePassThroughMessage(Context context, MiPushMessage message) {
+         Log.v(TAG,
+@@ -41,7 +43,7 @@
+ 
+         Message msg = Message.obtain();
+         msg.obj = log;
+-       // DemoApplication.getHandler().sendMessage(msg);
++        FlutterHuaweiPushPlugin.getHandler().sendMessage(msg);
+     }
+ 
+     /**
+@@ -67,7 +69,7 @@
+         if (message.isNotified()) {
+             msg.obj = log;
+         }
+-        //DemoApplication.getHandler().sendMessage(msg);
++        FlutterHuaweiPushPlugin.getHandler().sendMessage(msg);
+     }
+ 
+     /**
+@@ -90,7 +92,7 @@
+ 
+         Message msg = Message.obtain();
+         msg.obj = log;
+-        //DemoApplication.getHandler().sendMessage(msg);
++        FlutterHuaweiPushPlugin.getHandler().sendMessage(msg);
+     }
+ 
+     @Override
+@@ -166,7 +168,16 @@
+ 
+         Message msg = Message.obtain();
+         msg.obj = log;
+-        //DemoApplication.getHandler().sendMessage(msg);
++
++        String token =MiPushClient.getRegId(context);
++        Intent intent = new Intent();
++        intent.setAction(CODELABS_ACTION);
++        intent.putExtra("method", "onNewToken");
++        intent.putExtra("msg",MiPushClient.getRegId(context));
++        intent.putExtra("provider","XIAOMI");
++
++        context.sendBroadcast(intent);
++//        FlutterHuaweiPushPlugin.getHandler().sendMessage(msg);
+     }
+ 
+     /**
+@@ -195,7 +206,7 @@
+ 
+         Message msg = Message.obtain();
+         msg.obj = log;
+-        //DemoApplication.getHandler().sendMessage(msg);
++        FlutterHuaweiPushPlugin.getHandler().sendMessage(msg);
+     }
+ 
+     @Override
+Index: android/src/main/java/com/huaweipush/naoxuejia/flutter_huawei_push/FlutterHuaweiPushPlugin.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- android/src/main/java/com/huaweipush/naoxuejia/flutter_huawei_push/FlutterHuaweiPushPlugin.java	(revision d4b61ae214dc6072e30413251114ae84904279c7)
++++ android/src/main/java/com/huaweipush/naoxuejia/flutter_huawei_push/FlutterHuaweiPushPlugin.java	(date 1592892942000)
+@@ -12,6 +12,7 @@
+ import android.os.Process;
+ import android.text.TextUtils;
+ import android.util.Log;
++import android.widget.Toast;
+ 
+ import androidx.annotation.NonNull;
+ 
+@@ -40,7 +41,7 @@
+   private final MethodChannel channel;
+ 
+ 
+-  private static final String TAG = "FlutterHuaweiPushPlugin";
++  private static final String TAG = "com.naoxuejia.android.client";
+ 
+   ///事件派发对象
+   private EventChannel.EventSink eventSink = null;
+@@ -50,6 +51,8 @@
+   // user your appid the key.
+   private final static String XIAOMI_APP_KEY = "5831813338064";
+ 
++    private static DemoHandler sHandler = null;
++
+   ///事件派发流
+   private EventChannel.StreamHandler streamHandler = new EventChannel.StreamHandler(){
+ 
+@@ -98,8 +101,6 @@
+   public static void registerWith(Registrar registrar) {
+     final MethodChannel channel = new MethodChannel(registrar.messenger(), "flutter_huawei_push");
+     channel.setMethodCallHandler(new FlutterHuaweiPushPlugin(channel,registrar));
+-
+-
+   }
+ 
+   @Override
+@@ -134,6 +135,8 @@
+     //initJpush();//极光推送均初始化，但是如果是小米、华为设备，则需要关闭通知栏
+   }
+ 
++
++  ///初始化小米
+   private void initXiaoMiPush(final MethodChannel.Result response){
+     if(shouldInit()) {
+       MiPushClient.registerPush(context, XIAOMI_APP_ID, XIAOMI_APP_KEY);
+@@ -157,8 +160,13 @@
+       }
+     };
+     Logger.setLogger(context, newLogger);
++
++      if (sHandler == null) {
++          sHandler = new DemoHandler(context);
++      }
+   }
+ 
++  ///
+   private boolean shouldInit() {
+     ActivityManager am = ((ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE));
+     List<ActivityManager.RunningAppProcessInfo> processInfos = am.getRunningAppProcesses();
+@@ -166,6 +174,9 @@
+     int myPid = Process.myPid();
+     for (ActivityManager.RunningAppProcessInfo info : processInfos) {
+       if (info.pid == myPid && mainProcessName.equals(info.processName)) {
++        //System.out.println("PId"+info.pid);
++        //sendToFlutter("tokenSuccess",info.pid+"","XIAOMI");
++        //System.out.println(MiPushClient.getRegId(context));
+         return true;
+       }
+     }
+@@ -232,13 +243,13 @@
+   public class MyReceiver extends BroadcastReceiver {
+     @Override
+     public void onReceive(Context context, Intent intent) {
+-      sendToFlutter("huaWeiTokenServicesStart","servicesSuccess","");
+-
++     //sendToFlutter("huaWeiTokenServicesStart","servicesSuccess","");
+       Bundle bundle = intent.getExtras();
+       if (bundle != null && bundle.getString("msg") != null) {
+         String content = bundle.getString("msg");
++        String provider = bundle.getString("provider");
+         System.out.println("content——————————————————"+content);
+-        sendToFlutter("tokenSuccess",content,"HUAWEI");
++        sendToFlutter("tokenSuccess",content,provider);
+         //showLog(content);
+       }
+     }
+@@ -299,5 +310,35 @@
+       sendToFlutter("tokenSuccess",value,"HUAWEI");
+     }
+   }
++
++    public static DemoHandler getHandler() {
++        return sHandler;
++    }
++
++
++    public static class DemoHandler extends Handler {
++
++        private Context context;
++
++        public DemoHandler(Context context) {
++            this.context = context;
++        }
++
++        @Override
++        public void handleMessage(Message msg) {
++//            String s = (String) msg.obj;
++//            String regId = MiPushClient.getRegId(context);
++//          Handler successHandler = new SuccessHandler(Looper.getMainLooper());
++//          Message msg = successHandler.obtainMessage();
++//
++//          Bundle b = new Bundle();
++//          b.putString("message", token);
++//          msg.setData(b);
++//          msg.sendToTarget();
++//            if (!TextUtils.isEmpty(s)) {
++//                Toast.makeText(context, s, Toast.LENGTH_LONG).show();
++//            }
++        }
++    }
+ }
+ 

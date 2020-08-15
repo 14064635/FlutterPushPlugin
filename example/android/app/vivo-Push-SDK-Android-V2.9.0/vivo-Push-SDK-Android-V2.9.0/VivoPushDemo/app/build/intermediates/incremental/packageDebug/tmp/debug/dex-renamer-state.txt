@@ -1,0 +1,7 @@
+#Tue Jun 23 17:49:20 CST 2020
+base.0=/Users/krcm110/Downloads/vivo-Push-SDK-Android-V2.9.0/vivo-Push-SDK-Android-V2.9.0/VivoPushDemo/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=/Users/krcm110/Downloads/vivo-Push-SDK-Android-V2.9.0/vivo-Push-SDK-Android-V2.9.0/VivoPushDemo/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex

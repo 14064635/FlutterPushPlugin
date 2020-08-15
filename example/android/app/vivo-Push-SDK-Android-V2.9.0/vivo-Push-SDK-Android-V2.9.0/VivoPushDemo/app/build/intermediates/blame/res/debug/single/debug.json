@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/krcm110/Downloads/vivo-Push-SDK-Android-V2.9.0/vivo-Push-SDK-Android-V2.9.0/VivoPushDemo/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/krcm110/Downloads/vivo-Push-SDK-Android-V2.9.0/vivo-Push-SDK-Android-V2.9.0/VivoPushDemo/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/krcm110/Downloads/vivo-Push-SDK-Android-V2.9.0/vivo-Push-SDK-Android-V2.9.0/VivoPushDemo/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/krcm110/Downloads/vivo-Push-SDK-Android-V2.9.0/vivo-Push-SDK-Android-V2.9.0/VivoPushDemo/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/krcm110/Downloads/vivo-Push-SDK-Android-V2.9.0/vivo-Push-SDK-Android-V2.9.0/VivoPushDemo/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/krcm110/Downloads/vivo-Push-SDK-Android-V2.9.0/vivo-Push-SDK-Android-V2.9.0/VivoPushDemo/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/krcm110/Downloads/vivo-Push-SDK-Android-V2.9.0/vivo-Push-SDK-Android-V2.9.0/VivoPushDemo/app/build/intermediates/res/merged/debug/layout_main.xml.flat",
+        "source": "/Users/krcm110/Downloads/vivo-Push-SDK-Android-V2.9.0/vivo-Push-SDK-Android-V2.9.0/VivoPushDemo/app/src/main/res/layout/main.xml"
+    },
+    {
+        "merged": "/Users/krcm110/Downloads/vivo-Push-SDK-Android-V2.9.0/vivo-Push-SDK-Android-V2.9.0/VivoPushDemo/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/krcm110/Downloads/vivo-Push-SDK-Android-V2.9.0/vivo-Push-SDK-Android-V2.9.0/VivoPushDemo/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/krcm110/Downloads/vivo-Push-SDK-Android-V2.9.0/vivo-Push-SDK-Android-V2.9.0/VivoPushDemo/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/krcm110/Downloads/vivo-Push-SDK-Android-V2.9.0/vivo-Push-SDK-Android-V2.9.0/VivoPushDemo/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    }
+]
